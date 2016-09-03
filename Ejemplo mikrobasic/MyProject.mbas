@@ -1,0 +1,44 @@
+program MyProject
+
+' Declarations section 
+dim x as byte
+
+main:
+org 0x1000
+orgall(0x1000)
+TRISC = %00000000
+
+PORTC.1 = 0
+PORTC.2 = 0
+
+PWM1_Init(100000)
+PWM1_start()
+PWM2_Init(100000)
+PWM2_start()
+
+delay_ms(500)
+
+inicio:
+for x = 0 to 255 step 1
+PWM1_set_Duty(x)
+delay_ms(10)
+next x
+
+for x = 0 to 255 step 1
+PWM2_set_Duty(x)
+delay_ms(10)
+next x
+
+for x = 255 to 0 step -1
+PWM1_set_Duty(x)
+delay_ms(10)
+next x
+
+for x = 255 to 0 step -1
+PWM2_set_Duty(x)
+delay_ms(10)
+next x
+
+goto inicio
+
+end.
