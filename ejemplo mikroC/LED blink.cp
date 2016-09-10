@@ -6,11 +6,12 @@ void main() org 0x1000
 TRISC = 0b00000001;
 PORTC = 0b00000000;
 
-parpadear:
+while(1)
+{
 PORTC.f1 = 0;
 delay_ms(1000);
 PORTC.f1 = 1;
 delay_ms(1000);
-goto parpadear;
+}
 
 }
