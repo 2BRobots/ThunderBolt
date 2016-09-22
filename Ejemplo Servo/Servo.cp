@@ -1,31 +1,24 @@
 #line 1 "C:/Users/David Fernandez/Documents/GitHub/ThunderBolt/Ejemplo Servo/Servo.c"
 #pragma orgall 0x1000
-#line 3 "C:/Users/David Fernandez/Documents/GitHub/ThunderBolt/Ejemplo Servo/Servo.c"
+#line 9 "C:/Users/David Fernandez/Documents/GitHub/ThunderBolt/Ejemplo Servo/Servo.c"
 void servo(int angulo)
 {
-
-
-
-
 int i;
-
 if(angulo <= 0)
 {
 angulo = 0;
 }
-
 if (angulo >= 180)
 {
 angulo = 180;
 }
-
-PORTC.f1 = 1;
-delay_us(1000);
+ PORTB.f0  = 1;
+delay_us(600);
 for(i = 0; i <= angulo; i++)
 {
-delay_us(6);
+delay_us(9);
 }
-PORTC.f1 = 0;
+ PORTB.f0  = 0;
 }
 
 int x;
@@ -57,7 +50,4 @@ servo(x);
 delay_ms(20);
 }
 }
-
-
-
 }
