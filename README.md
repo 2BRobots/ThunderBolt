@@ -3,6 +3,8 @@ Here can be found all the resources to build your own ThunderBolt development bo
 
 Here is a video of how to get started:
 
+https://youtu.be/WCGcCIe8bug
+
 <iframe width="854" height="480" src="https://www.youtube.com/embed/WCGcCIe8bug" frameborder="0" allowfullscreen></iframe>
 
 Hope you find it useful and can make a lot of projects with it. 
