@@ -335,6 +335,7 @@ bmajorrev
 bmajorrev
 bminorrev
 bminorrev
+bootinterrupt
 bor
 bor_bit
 brg16
@@ -964,6 +965,7 @@ intedg1
 intedg1_bit
 intedg2
 intedg2_bit
+interrupt
 intsrc
 intsrc_bit
 inttohex
@@ -2146,7 +2148,6 @@ tft_write_text_return_pos
 time_datetoepoch
 time_epochtodate
 time_jd1970
-timer0
 tmr0h
 tmr0ie
 tmr0ie_bit
