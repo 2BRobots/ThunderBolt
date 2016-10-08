@@ -33,7 +33,7 @@ Count=0
 [OTHER_FILES]
 Count=0
 [SEARCH_PATH]
-Count=4
+Count=3
 Path0=D:\mikroelectronica software\mikroC PRO for PIC\Defs\
 Path1=D:\mikroelectronica software\mikroC PRO for PIC\uses\P18\
 Path2=C:\Users\David Fernandez\Documents\GitHub\ThunderBolt\Ejemplos y Utilidades\ejemplos mikroC\ejemplo timer0\

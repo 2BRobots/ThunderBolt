@@ -39,6 +39,8 @@ T0CON.f7 = 1;
 
 while(1)
  {
+ PORTC.f2 = !PORTC.f2;
+ delay_ms(500);
  }
 }
 

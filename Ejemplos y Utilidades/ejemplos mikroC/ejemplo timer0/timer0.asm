@@ -21,7 +21,7 @@ _interrupt:
 L_interrupt0:
 ;timer0.c,18 :: 		}
 L_end_interrupt:
-L__interrupt4:
+L__interrupt5:
 	RETFIE      1
 ; end of _interrupt
 
@@ -59,23 +59,40 @@ _main:
 	BSF         T0CON+0, 7 
 ;timer0.c,40 :: 		while(1)
 L_main1:
-;timer0.c,42 :: 		}
+;timer0.c,42 :: 		PORTC.f2 = !PORTC.f2;
+	BTG         PORTC+0, 2 
+;timer0.c,43 :: 		delay_ms(500);
+	MOVLW       31
+	MOVWF       R11, 0
+	MOVLW       113
+	MOVWF       R12, 0
+	MOVLW       30
+	MOVWF       R13, 0
+L_main3:
+	DECFSZ      R13, 1, 1
+	BRA         L_main3
+	DECFSZ      R12, 1, 1
+	BRA         L_main3
+	DECFSZ      R11, 1, 1
+	BRA         L_main3
+	NOP
+;timer0.c,44 :: 		}
 	GOTO        L_main1
-;timer0.c,43 :: 		}
+;timer0.c,45 :: 		}
 L_end_main:
 	GOTO        $+0
 ; end of _main
 
 _bootInterrupt:
 
-;timer0.c,45 :: 		void bootInterrupt()    //tabla de saltos para poder activar interrupciones usando un bootloader, manda llamar interrupciones y al main segun correponda
-;timer0.c,48 :: 		goto _main
+;timer0.c,47 :: 		void bootInterrupt()    //tabla de saltos para poder activar interrupciones usando un bootloader, manda llamar interrupciones y al main segun correponda
+;timer0.c,50 :: 		goto _main
 	GOTO        _main+0
-;timer0.c,49 :: 		goto 0
+;timer0.c,51 :: 		goto 0
 	GOTO        0
-;timer0.c,50 :: 		goto _interrupt
+;timer0.c,52 :: 		goto _interrupt
 	GOTO        _interrupt+0
-;timer0.c,52 :: 		}
+;timer0.c,54 :: 		}
 L_end_bootInterrupt:
 	RETURN      0
 ; end of _bootInterrupt
